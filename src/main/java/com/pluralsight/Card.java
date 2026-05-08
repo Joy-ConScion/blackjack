@@ -46,8 +46,13 @@ public class Card {
         return isFaceUp;
     }
 
-    public void flip() {
+    public void flip() {/*works as toggle*/
         isFaceUp = !isFaceUp;
+    }
+
+    @Override
+    public String toString() {/*Allows cards to be viewed when called later*/
+        return getValue() + " of " + getSuit();
     }
 }
 
