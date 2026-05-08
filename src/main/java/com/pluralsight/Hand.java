@@ -9,19 +9,22 @@ public class Hand {
         cards = new ArrayList<>();
     }
 
-    // A Card is dealt to the Hand and the Hand is responsible
-    // to store the card
-    public void deal(Card card) {
+    public void deal(Card card) {    // A Card is dealt to the Hand and the Hand is responsible to store the card
         cards.add(card);
     }
 
-    public int getSize() {
+    public void viewHand(){
+        for (Card card:cards){
+            card.flip();
+            System.out.println(card);
+        }
+    }
+
+    public int getSize() {/*Test this, should say how many cards in hand*/
         return cards.size();
     }
 
-    // The Hand uses the methods of each card to determine
-    // the value of each card - and adds up all values
-    public int getValue() {
+    public int getValue() {// The Hand uses the methods of each card to determine the value of each card - and adds up all values
         int value = 0;
 
         for (Card card : cards) {
