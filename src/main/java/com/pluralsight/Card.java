@@ -11,18 +11,18 @@ public class Card {
         this.isFaceUp = false;
     }
 
-    public String getSuit(){
+    public String getSuit() {
         // only return the suit if the card is face up
-        if(isFaceUp){
+        if (isFaceUp) {
             return suit;
         } else {
             return "#";
         }
     }
 
-    public String getValue(){
+    public String getValue() {
         // only return the value if the card is face up
-        if(isFaceUp){
+        if (isFaceUp) {
             // this is the string value of the card
             // i.e. A, K, Q, J, 10, 9 ...
             return value;
@@ -31,15 +31,13 @@ public class Card {
         }
     }
 
-    public int getPointValue(){
+    public int getPointValue() {
         // only return the value if the card is face up
-        if(isFaceUp){/*|| vs && -> pipes are for OR while and-symbols are AND*/
+        if (isFaceUp) {/*|| vs && -> pipes are for OR while and-symbols are AND*/
 
             if (value.equalsIgnoreCase("a"))
                 return 11; /*IRL I believe A can be either 1 or 11*/
-            if (value.equalsIgnoreCase("k") ||
-                value.equalsIgnoreCase("q") ||
-                value.equalsIgnoreCase("j"))
+            if (value.equalsIgnoreCase("k") || value.equalsIgnoreCase("q") || value.equalsIgnoreCase("j"))
                 return 10;
             // determine point value and return it
             // A = 11 | K, Q, J = 10 | All numeric cards are equal to their face value
@@ -50,11 +48,11 @@ public class Card {
 
     }
 
-    public boolean isFaceUp(){
+    public boolean isFaceUp() {
         return isFaceUp;
     }
 
-    public void flip(){
+    public void flip() {
         isFaceUp = !isFaceUp;
     }
 }
